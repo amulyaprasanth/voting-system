@@ -1,13 +1,25 @@
 import React, {Component} from 'react';
-import Signin from './Signin';
+import Signin from './components/Signin/Signin';
+import BalletForm from './components/BalletForm/BalletForm';
+import Register from './components/Register/Register';
 import './App.css';
 
 
 class App extends Component {
-  render() {
-  return (
+  constructor() {
+    super();
+    this.state = {
+      route : 'signin'
+    }
+  }
+
+  onRouteChange  = (route) => {
+    this.setState({ route: route });
+  }
+  render() {  
+    return (
     <div>
-      <Signin/>
+      <BalletForm />
     </div>
   )
 }
